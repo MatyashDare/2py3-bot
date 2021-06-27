@@ -334,7 +334,7 @@ def main():
 			ANSWER: [MessageHandler(Filters.regex('[А-Я][а-я]+'), received_answer)],
 			TITLE: [MessageHandler(Filters.language('ru'), get_headline)],
             TEXTAG: [MessageHandler(Filters.regex('[А-Я][а-я]+'), get_text_tag)],
-            TAG: [MessageHandler(Filters.language('.+'), get_tag)],
+            TAG: [MessageHandler(Filters.regex('[0-9]*'), get_tag)],
             VAR: [MessageHandler(Filters.regex('.+'), best_var)],
 			MORE: [
 				CommandHandler('start', start),
